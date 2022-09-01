@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.sparkjava:spark-core:2.9.4'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.0'
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.0'
+    implementation 'com.sparkjava:spark-template-handlebars:2.7.1'
+    implementation group: 'com.github.jknack', name: 'handlebars', version: '4.0.5'
+    implementation 'com.github.slugify:slugify:3.0.2'
+}
+
+test {
+    useJUnitPlatform()
+}
