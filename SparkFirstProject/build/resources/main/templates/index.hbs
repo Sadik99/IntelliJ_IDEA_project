@@ -1,13 +1,16 @@
-
 {{#block "content"}}
     {{#if username }}
-      <h1>  Welcome {{username}}</h1>
-      <p>view <a href="/ideas">all course ideas</a> </p>
-    {{else }}<h1>Welcome Friends!</h1>
-    <form action="/sign-in" method="post" >
-        <input type="text" placeholder="What is your name?" name="username">
-        <button>Sign in</button>
-    </form>
+        <h1>Welcome {{ username }}!</h1>
+
+        <p>View <a href="/ideas">all course ideas</a>.</p>
+    {{ else }}
+        <h1>Welcome Students!</h1>
+
+        <form action="/sign-in" method="post">
+            <input type="text" placeholder="What's your user name?" name="username">
+            <button>Sign in</button>
+        </form>
     {{/if}}
 {{/block}}
-{{> base.hbs }}
+
+{{> base.hbs}}

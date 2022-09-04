@@ -26,8 +26,8 @@ public class SimpleCourseIdeaDAO implements CourseIdeaDAO{
             return ideas.stream()
                     .filter(idea->idea.getSlug().equals(slug))
                     .findFirst()
-                    .orElseThrow(ClassNotFoundException::new);
-        } catch (ClassNotFoundException e) {
+                    .orElseThrow(NotFoundException::new);
+        } catch (NotFoundException e) {
             throw new RuntimeException(e);
         }
     }

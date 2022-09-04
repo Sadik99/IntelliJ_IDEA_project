@@ -3,9 +3,7 @@ package org.example.model;
 import com.github.slugify.Slugify;
 
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class CourseIdea {
     private String slug;
@@ -17,12 +15,8 @@ public class CourseIdea {
         voters=new HashSet<>();
         this.title = title;
         this.creator = creator;
-        try {
-            Slugify slugify= Slugify.builder().build();
-            slug = slugify.slugify(title);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        Slugify slugify= Slugify.builder().build();
+        slug = slugify.slugify(title);
     }
 
     public String getTitle() {
@@ -34,10 +28,13 @@ public class CourseIdea {
     }
 
     public String getSlug() { return slug; }
-    public boolean addVoters(String voterUserName){
+    public List<String> getVoters(){
+        return new ArrayList<>(voters);
+    }
+    public boolean addVoter(String voterUserName){
         return voters.add(voterUserName);
     }
-    public int getVoterCount(){
+    public int getVoteCount(){
         return voters.size();
     }
 
@@ -46,11 +43,14 @@ public class CourseIdea {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CourseIdea that = (CourseIdea) o;
-        return Objects.equals(title, that.title) && Objects.equals(creator, that.creator);
+        if (!Objects.equals(title, that.title)) return false;
+        return Objects.equals(creator, that.creator);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, creator);
+        int result = title != null ? title.hashCode() : 0;
+        result = 31 * result + (creator != null ? creator.hashCode() : 0);
+        return result;
     }
 }
