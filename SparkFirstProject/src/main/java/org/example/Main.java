@@ -37,7 +37,7 @@ public class Main {
             Map<String, String> model = new HashMap<>();
             model.put("flashMessage", captureFlashMessage(req));
             model.put("username", req.attribute("username"));
-            model.put("flashMessage", captureFlashMessage(req));
+
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -55,9 +55,9 @@ public class Main {
             model.put("flashMessage", captureFlashMessage(req));
             return new ModelAndView(model, "ideas.hbs");
         }, new HandlebarsTemplateEngine());
-        get("/ideas/:slug", (req, res) -> {
+        get("/ideas/:pa", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            model.put("idea", dao.findBySlug(req.params("slug")));
+            model.put("idea", dao.findBySlug(req.params("pa")));
             return new ModelAndView(model, "idea.hbs");
         }, new HandlebarsTemplateEngine());
         post("/ideas", (req, res) -> {
@@ -67,7 +67,7 @@ public class Main {
             res.redirect("/ideas");
             return null;
         });
-        post("/ideas:slug/vote", (req, res) -> {
+        post("/ideas/:slug/vote", (req, res) -> {
             CourseIdea idea = dao.findBySlug(req.params("slug"));
             boolean added = idea.addVoter(req.attribute("username"));
             if (added) {

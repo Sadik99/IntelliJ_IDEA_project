@@ -15,7 +15,7 @@ public class CourseIdea {
         voters=new HashSet<>();
         this.title = title;
         this.creator = creator;
-        Slugify slugify= Slugify.builder().build();
+        Slugify slugify= Slugify.builder().underscoreSeparator(true).build();
         slug = slugify.slugify(title);
     }
 
