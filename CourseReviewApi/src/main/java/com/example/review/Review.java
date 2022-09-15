@@ -1,6 +1,7 @@
 package com.example.review;
 import com.example.core.BaseEntity;
 import com.example.course.Course;
+import com.example.user.User;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -15,6 +16,16 @@ public class Review extends BaseEntity{
     @ManyToOne
     @JoinColumn(name = "course_ID")
     private Course course;
+    @ManyToOne
+    private User reviewer;
+
+    public User getReviewer() {
+        return reviewer;
+    }
+
+    public void setReviewer(User reviewer) {
+        this.reviewer = reviewer;
+    }
 
     public void setCourse(Course course) {
         this.course = course;

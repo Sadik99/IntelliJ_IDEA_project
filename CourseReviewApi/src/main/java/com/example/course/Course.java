@@ -3,25 +3,29 @@ package com.example.course;
 import com.example.core.BaseEntity;
 import com.example.review.Review;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Entity
 public class Course extends BaseEntity {
+
+    @NotNull
+    @Size(min=2,max=140)
     private String title;
     private String url;
-
-
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
     private List<Review> reviews;
-    protected Course(){
+
+    protected Course() {
         super();
-        reviews=new ArrayList<>();
+        reviews = new ArrayList<>();
     }
+
     public Course(String title, String url) {
         this();
         this.title = title;
@@ -31,7 +35,8 @@ public class Course extends BaseEntity {
     public List<Review> getReviews() {
         return reviews;
     }
-    public void addReview(Review review){
+
+    public void addReview(Review review) {
         review.setCourse(this);
         reviews.add(review);
     }
