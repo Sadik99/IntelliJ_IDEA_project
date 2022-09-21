@@ -1,0 +1,31 @@
+{
+  "health": {
+    "title": "Stanje sustava",
+    "refresh.button": "Aktualiziraj",
+    "stacktrace": "Stacktrace",
+    "details": {
+      "details": "Detalji",
+      "properties": "Svojstva",
+      "name": "Naziv",
+      "value": "Vrijednost",
+      "error": "Greška"
+    },
+    "indicator": {
+      "diskSpace": "Prostor na disku",
+      "mail": "E-pošta",
+      "livenessState": "Liveness state",
+      "readinessState": "Readiness state",
+      "ping": "Aplikacija",
+      "db": "Database"
+    },
+    "table": {
+      "service": "Naziv servisa",
+      "status": "Status"
+    },
+    "status": {
+      "UNKNOWN": "NEPOZNAT",
+      "UP": "DIGNUT",
+      "DOWN": "SPUŠTEN"
+    }
+  }
+}
