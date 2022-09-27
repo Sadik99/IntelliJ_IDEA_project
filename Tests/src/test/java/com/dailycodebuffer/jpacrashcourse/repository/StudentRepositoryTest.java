@@ -4,7 +4,11 @@ import com.dailycodebuffer.jpacrashcourse.entity.Guardian;
 import com.dailycodebuffer.jpacrashcourse.entity.Student;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -79,5 +83,10 @@ class StudentRepositoryTest {
     public void getStudentByEmailAddressNativeNameParam(){
         Student student=studentRepository.getStudentByEmailAddressNativeNameParam("shamim@gmail.com");
         System.out.println("Native.Q in Email: "+student);
+    }
+
+    @Test
+    public void updateStudentNameByEmailIdTest(){
+        studentRepository.updateStudentNameByEmailId("Shakib","sakib@gamil.com");
     }
 }
