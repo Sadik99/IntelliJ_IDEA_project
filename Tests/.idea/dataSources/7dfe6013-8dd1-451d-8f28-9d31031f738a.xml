@@ -1053,213 +1053,249 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="304" parent="292" name="student_sequence">
+    <table id="304" parent="292" name="student_course_mapping">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="305" parent="292" name="tbl_student">
+    <table id="305" parent="292" name="student_sequence">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="306" parent="292" name="teacher">
+    <table id="306" parent="292" name="tbl_student">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="307" parent="292" name="teacher_sequence">
+    <table id="307" parent="292" name="teacher">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="308" parent="299" name="course_id">
+    <table id="308" parent="292" name="teacher_sequence">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="309" parent="299" name="course_id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="309" parent="299" name="credit">
+    <column id="310" parent="299" name="credit">
       <DataType>int|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="310" parent="299" name="title">
+    <column id="311" parent="299" name="title">
       <DataType>varchar(255)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="311" parent="299" name="teacher_id">
+    <column id="312" parent="299" name="teacher_id">
       <DataType>bigint|0s</DataType>
       <Position>4</Position>
     </column>
-    <foreign-key id="312" parent="299" name="FKsybhlxoejr4j3teomm5u2bx1n">
+    <foreign-key id="313" parent="299" name="FKsybhlxoejr4j3teomm5u2bx1n">
       <ColNames>teacher_id</ColNames>
       <RefColNames>teacher_id</RefColNames>
       <RefTableName>teacher</RefTableName>
     </foreign-key>
-    <index id="313" parent="299" name="PRIMARY">
+    <index id="314" parent="299" name="PRIMARY">
       <ColNames>course_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="314" parent="299" name="FKsybhlxoejr4j3teomm5u2bx1n">
+    <index id="315" parent="299" name="FKsybhlxoejr4j3teomm5u2bx1n">
       <ColNames>teacher_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="315" parent="299" name="PRIMARY">
+    <key id="316" parent="299" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="316" parent="300" name="course_material_id">
+    <column id="317" parent="300" name="course_material_id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="317" parent="300" name="url">
+    <column id="318" parent="300" name="url">
       <DataType>varchar(255)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="318" parent="300" name="course_id">
+    <column id="319" parent="300" name="course_id">
       <DataType>bigint|0s</DataType>
       <Position>3</Position>
     </column>
-    <foreign-key id="319" parent="300" name="FK6qgylrot7cxgungunwyrslpeo">
+    <foreign-key id="320" parent="300" name="FK6qgylrot7cxgungunwyrslpeo">
       <ColNames>course_id</ColNames>
       <RefColNames>course_id</RefColNames>
       <RefTableName>course</RefTableName>
     </foreign-key>
-    <index id="320" parent="300" name="PRIMARY">
+    <index id="321" parent="300" name="PRIMARY">
       <ColNames>course_material_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="321" parent="300" name="FK6qgylrot7cxgungunwyrslpeo">
+    <index id="322" parent="300" name="UK_h1og6srs8s1xhabgqtkhdf96q">
+      <ColNames>course_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="323" parent="300" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="324" parent="300" name="UK_h1og6srs8s1xhabgqtkhdf96q">
+      <UnderlyingIndexName>UK_h1og6srs8s1xhabgqtkhdf96q</UnderlyingIndexName>
+    </key>
+    <column id="325" parent="301" name="next_val">
+      <DataType>bigint|0s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="326" parent="302" name="next_val">
+      <DataType>bigint|0s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="327" parent="303" name="student_id">
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="328" parent="303" name="email">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="329" parent="303" name="first_name">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="330" parent="303" name="guardian_email">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="331" parent="303" name="guardian_mobile">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="332" parent="303" name="guardian_name">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="333" parent="303" name="last_name">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>7</Position>
+    </column>
+    <index id="334" parent="303" name="PRIMARY">
+      <ColNames>student_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="335" parent="303" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="336" parent="304" name="course_id">
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="337" parent="304" name="student_id">
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <foreign-key id="338" parent="304" name="FKtltu0fvftye7kuscc6dgr3v3p">
+      <ColNames>course_id</ColNames>
+      <RefColNames>course_id</RefColNames>
+      <RefTableName>course</RefTableName>
+    </foreign-key>
+    <foreign-key id="339" parent="304" name="FK7eygrrsd7x08qlsbxw6es94t4">
+      <ColNames>student_id</ColNames>
+      <RefColNames>student_id</RefColNames>
+      <RefTableName>tbl_student</RefTableName>
+    </foreign-key>
+    <index id="340" parent="304" name="FKtltu0fvftye7kuscc6dgr3v3p">
       <ColNames>course_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="322" parent="300" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="323" parent="301" name="next_val">
-      <DataType>bigint|0s</DataType>
-      <Position>1</Position>
-    </column>
-    <column id="324" parent="302" name="next_val">
-      <DataType>bigint|0s</DataType>
-      <Position>1</Position>
-    </column>
-    <column id="325" parent="303" name="student_id">
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="326" parent="303" name="email">
-      <DataType>varchar(255)|0s</DataType>
-      <Position>2</Position>
-    </column>
-    <column id="327" parent="303" name="first_name">
-      <DataType>varchar(255)|0s</DataType>
-      <Position>3</Position>
-    </column>
-    <column id="328" parent="303" name="guardian_email">
-      <DataType>varchar(255)|0s</DataType>
-      <Position>4</Position>
-    </column>
-    <column id="329" parent="303" name="guardian_mobile">
-      <DataType>varchar(255)|0s</DataType>
-      <Position>5</Position>
-    </column>
-    <column id="330" parent="303" name="guardian_name">
-      <DataType>varchar(255)|0s</DataType>
-      <Position>6</Position>
-    </column>
-    <column id="331" parent="303" name="last_name">
-      <DataType>varchar(255)|0s</DataType>
-      <Position>7</Position>
-    </column>
-    <index id="332" parent="303" name="PRIMARY">
+    <index id="341" parent="304" name="FK7eygrrsd7x08qlsbxw6es94t4">
       <ColNames>student_id</ColNames>
       <Type>btree</Type>
-      <Unique>1</Unique>
     </index>
-    <key id="333" parent="303" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="334" parent="304" name="next_val">
+    <column id="342" parent="305" name="next_val">
       <DataType>bigint|0s</DataType>
       <Position>1</Position>
     </column>
-    <column id="335" parent="305" name="student_id">
+    <column id="343" parent="306" name="student_id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="336" parent="305" name="first_name">
+    <column id="344" parent="306" name="first_name">
       <DataType>varchar(255)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="337" parent="305" name="guardian_email">
+    <column id="345" parent="306" name="guardian_email">
       <DataType>varchar(255)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="338" parent="305" name="guardian_mobile">
+    <column id="346" parent="306" name="guardian_mobile">
       <DataType>varchar(255)|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="339" parent="305" name="guardian_name">
+    <column id="347" parent="306" name="guardian_name">
       <DataType>varchar(255)|0s</DataType>
       <Position>5</Position>
     </column>
-    <column id="340" parent="305" name="last_name">
+    <column id="348" parent="306" name="last_name">
       <DataType>varchar(255)|0s</DataType>
       <Position>6</Position>
     </column>
-    <column id="341" parent="305" name="email_address">
+    <column id="349" parent="306" name="email_address">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <index id="342" parent="305" name="PRIMARY">
+    <index id="350" parent="306" name="PRIMARY">
       <ColNames>student_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="343" parent="305" name="email_unique">
+    <index id="351" parent="306" name="email_unique">
       <ColNames>email_address</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="344" parent="305" name="PRIMARY">
+    <key id="352" parent="306" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="345" parent="305" name="email_unique">
+    <key id="353" parent="306" name="email_unique">
       <UnderlyingIndexName>email_unique</UnderlyingIndexName>
     </key>
-    <column id="346" parent="306" name="teacher_id">
+    <column id="354" parent="307" name="teacher_id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="347" parent="306" name="first_name">
+    <column id="355" parent="307" name="first_name">
       <DataType>varchar(255)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="348" parent="306" name="last_name">
+    <column id="356" parent="307" name="last_name">
       <DataType>varchar(255)|0s</DataType>
       <Position>3</Position>
     </column>
-    <index id="349" parent="306" name="PRIMARY">
+    <index id="357" parent="307" name="PRIMARY">
       <ColNames>teacher_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="350" parent="306" name="PRIMARY">
+    <key id="358" parent="307" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="351" parent="307" name="next_val">
+    <column id="359" parent="308" name="next_val">
       <DataType>bigint|0s</DataType>
       <Position>1</Position>
     </column>

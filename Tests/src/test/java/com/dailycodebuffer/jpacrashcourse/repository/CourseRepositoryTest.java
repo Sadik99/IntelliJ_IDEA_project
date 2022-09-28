@@ -1,6 +1,7 @@
 package com.dailycodebuffer.jpacrashcourse.repository;
 
 import com.dailycodebuffer.jpacrashcourse.entity.Course;
+import com.dailycodebuffer.jpacrashcourse.entity.Student;
 import com.dailycodebuffer.jpacrashcourse.entity.Teacher;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,5 +56,15 @@ class CourseRepositoryTest {
     public void printfindByTitleContaining(){
         Pageable firstPageTitleRecords= PageRequest.of(0,10);
         List<Course> courses=courseRepository.findByTitleContaining("D",firstPageTitleRecords);
+        System.out.println("Seaching pages: "+ courses);
+    }
+
+    @Test
+    public void saveCourseWithStudentAndTeacher(){
+        Teacher teacher=Teacher.builder().firstName("Tanvir").lastName("Ahmed").build();
+        Student student= Student.builder().firstName("Rafayeat").lastName("Khan").email("raf@gmail.com").build();
+        Course course= Course.builder().title("AI").credit(4).teacher(teacher).build();
+        course.addStudents(student);
+        courseRepository.save(course);
     }
 }
